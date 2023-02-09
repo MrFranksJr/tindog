@@ -34,12 +34,12 @@ body {
 
 header {
     width: 100%;
-    height: 10%;
+    height: 7%;
     max-height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 18px;
+    padding: 2px 18px;
 }
 
 main {
@@ -75,14 +75,14 @@ main {
 }
 
 .app-icon {
-    height: 42px;
-    width: 84px;
+    height: 38px;
+    width: 76px;
 }
 
 .profile-icon,
 .chat-icon {
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
 }
 
 .message {
@@ -159,8 +159,22 @@ h3 {
     color: #B7B7B7;
 }
 
-@media (max-width: 500px) {
+@media (min-width: 500px) {
     header {
         height: 7%;
+    }
+    .profile-icon,
+    .chat-icon {
+    width: 34px;
+    height: 34px;
+    }
+    header {
+        height: 10%;
+        max-height: 80px;
+        padding: 0 18px;
+    }
+    .app-icon {
+        height: 42px;
+        width: 84px;
     }
 }

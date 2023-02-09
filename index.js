@@ -58,3 +58,12 @@ document.addEventListener("click", function(e) {
 
 document.getElementById('dog-container').style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.9) -11.44%, rgba(0, 0, 0, 0) 39.97%)`
 setTimeout(() => renderDogs(), 1500)
+
+
+
+new ResizeObserver((entries) => {
+    entries.forEach((entry) => {
+        //const windowFullHeight = parseFloat(window.outerHeight);
+        document.documentElement.style.setProperty("--webkit-footer-gap", `${entry.contentRect.height}px`);
+    });
+}).observe(document.querySelector(".webkit-gap"));

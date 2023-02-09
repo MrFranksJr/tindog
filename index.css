@@ -3,6 +3,8 @@
     box-sizing: border-box;
 }
 
+
+/*************** MAIN BLOCKS ************/
 body {
     font-family: 'Poppins', sans-serif;
     height: 100vh;
@@ -40,6 +42,32 @@ header {
     padding: 0 18px;
 }
 
+main {
+    padding: 0 8px;
+    height: 90%;
+    width: 100%;
+    display: flex;
+}
+
+.action-buttons {
+    height: 15%;
+    max-height: 140px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dog-container {
+    flex-grow: 1;
+    border-radius: 15px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px 12px;
+}
+
+/*************** HEADER ************/
 .profile-icon,
 .app-icon,
 .chat-icon {
@@ -57,24 +85,6 @@ header {
     height: 34px;
 }
 
-
-main {
-    padding: 0 8px;
-    height: 90%;
-    width: 100%;
-    display: flex;
-}
-
-.dog-container {
-    flex: 1 1 auto;
-    border-radius: 15px;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 16px 12px;
-}
-
 .message {
     text-align: center;
     font-size: 24px;
@@ -87,14 +97,6 @@ main {
     width: 230px;
     transform-origin: 200px;
     transform: rotate(-30deg);
-}
-
-.action-buttons {
-    height: 15%;
-    max-height: 140px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 .dislike-btn,

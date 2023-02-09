@@ -57,4 +57,4 @@ document.addEventListener("click", function(e) {
 
 
 document.getElementById('dog-container').style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.9) -11.44%, rgba(0, 0, 0, 0) 39.97%)`
-setTimeout(() => renderDogs(), 900)
+setTimeout(() => renderDogs(), 1500)

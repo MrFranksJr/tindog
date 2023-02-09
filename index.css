@@ -26,11 +26,14 @@ body {
     box-shadow: 0px 0px 20px 10px #b8b8b8;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header {
-    height: 10vh;
-    max-height: 81px;
+    width: 100%;
+    height: 10%;
+    max-height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,12 +60,13 @@ header {
 
 main {
     padding: 0 8px;
-    height: 90vh;
+    height: 90%;
+    width: 100%;
+    display: flex;
 }
 
 .dog-container {
-    width: 100%;
-    height: 85%;
+    flex: 1 1 auto;
     border-radius: 15px;
     background-size: cover;
     display: flex;
@@ -87,6 +91,7 @@ main {
 
 .action-buttons {
     height: 15%;
+    max-height: 140px;
     width: 100%;
     display: flex;
     justify-content: center;

@@ -1,5 +1,6 @@
 import Dog from '/data/Dog.js'
 import dogs from '/data/data.js'
+import convertStyle from '/data/utils.js'
 
 const likeBtn = document.getElementById('like-btn')
 const dislikeBtn = document.getElementById('dislike-btn')
@@ -22,8 +23,9 @@ function wasSwiped(buttonType) {
     else if (buttonType === 'dislike') {
         document.getElementById('badge').src = '/images/badge-nope.png'
     }
-    dog.wasSwiped(buttonType)
 
+    dog.wasSwiped(buttonType)
+    
     if (dogArray.length > 0) {
         dog = getNextDog()
         setTimeout(() => renderDogs(), 1500)
@@ -55,6 +57,10 @@ document.addEventListener("click", function(e) {
     }
 })
 
+///////////SAFARI BAR HANDLER - RESIZE EVENT///////////////
+window.addEventListener("resize", convertStyle)
+window.addEventListener("DOMContentLoaded", convertStyle)
 
+///////////INITIAL RENDER///////////////
 document.getElementById('dog-container').style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.9) -11.44%, rgba(0, 0, 0, 0) 39.97%)`
 setTimeout(() => renderDogs(), 1500)

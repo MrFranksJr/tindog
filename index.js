@@ -1,18 +1,22 @@
+////////////////IMPORTS//////////////////////
 import Dog from '/data/Dog.js'
 import dogs from '/data/data.js'
 import convertStyle from '/data/utils.js'
 
+////////////////CONSTS//////////////////////
 const likeBtn = document.getElementById('like-btn')
 const dislikeBtn = document.getElementById('dislike-btn')
 
+////////////////STORE AND RANDOMIZE DOGS//////////////////////
 let dogArray = dogs.sort((a, b) => 0.5 - Math.random())
 
+////////////////next dog from array//////////////////////
 function getNextDog() {
     const nextDogData = dogArray.shift()
-
     return nextDogData ? new Dog(nextDogData) : {}
 }
 
+////////////////swipe event//////////////////////
 function wasSwiped(buttonType) {
     likeBtn.disabled = true
     dislikeBtn.disabled = true
@@ -25,7 +29,7 @@ function wasSwiped(buttonType) {
     }
 
     dog.wasSwiped(buttonType)
-    
+
     if (dogArray.length > 0) {
         dog = getNextDog()
         setTimeout(() => renderDogs(), 1500)

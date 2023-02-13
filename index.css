@@ -40,14 +40,14 @@ main {
 }
 
 .action-buttons {
-    height: 150px;
-    max-height: 140px;
+    height: 15%;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .dog-container {
+    position: relative;
     flex-grow: 1;
     border-radius: 15px;
     background-size: cover;
@@ -88,6 +88,23 @@ main {
     width: 230px;
     transform-origin: 200px;
     transform: rotate(-30deg);
+}
+
+#previous,
+#next { 
+    display:block; 
+    width: 50%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+}
+
+#previous {
+    left:0px;
+}
+
+#next { 
+    left:50%;
 }
 
 
@@ -170,6 +187,7 @@ h3 {
 
     main {
         height: 90%;
+        width: 100%;
     }
     
     .action-buttons {
@@ -196,4 +214,33 @@ h3 {
         width: 1200px;
         margin: 0 auto;
     }
+}
+
+
+.radio {
+    display: none;
+}
+
+.dots {
+    margin-top: 20px;
+    width: 100%;
+    bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dots label {
+    width: 15px;
+    height: 15px;
+    background: #FFF;
+    margin: 0 10px;
+    border-radius: 50%;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.dots label.active {
+    opacity: 1;
 }

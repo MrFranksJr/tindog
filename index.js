@@ -59,6 +59,9 @@ document.addEventListener("click", function(e) {
         wasSwiped(e.target.dataset.buttontype)
         }
     }
+    if (e.target.dataset.photoevent) {
+        console.log('it works!' + e.target.dataset.photoevent)
+    }
 })
 
 ///////////SAFARI BAR HANDLER - RESIZE EVENT///////////////

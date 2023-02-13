@@ -8,7 +8,6 @@ body {
     font-family: 'Poppins', sans-serif;
     height: 100%;
     overflow: none;
-    background:#ccc;
 }
 
 .container {
@@ -85,7 +84,7 @@ main {
 /*************** PHOTO AREA ************/
 .badge {
     display: block;
-    width: 230px;
+    width: 200px;
     transform-origin: 200px;
     transform: rotate(-30deg);
 }
@@ -205,7 +204,7 @@ h3 {
         margin: 30px 50px 40px 20px;
     }
     .badge {
-        width: 200px;
+        width: 230px;
     }
 }
 

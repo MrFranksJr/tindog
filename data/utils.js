@@ -5,4 +5,8 @@ const convertStyle = () => {
     })
 }
 
+const nextPhoto = () => {
+    
+}
+
 export default convertStyle

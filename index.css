@@ -7,6 +7,8 @@
 body {
     font-family: 'Poppins', sans-serif;
     height: 100%;
+    overflow: none;
+    background:#ccc;
 }
 
 .container {

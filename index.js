@@ -1,7 +1,7 @@
 ////////////////IMPORTS//////////////////////
-import Dog from '../data/Dog.js'
-import dogs from '../data/data.js'
-import { convertStyle, isTouchDevice, isSwiped, deviceType, events, getXY, mouseX, mouseY, initialX, initialY, modifyXnY, isSwipedTrue, isSwipedFalse } from '../data/utils.js'
+import Dog from '/data/Dog.js'
+import dogs from '/data/data.js'
+import { convertStyle, isTouchDevice, isSwiped, deviceType, events, getXY, mouseX, mouseY, initialX, initialY, modifyXnY, isSwipedTrue, isSwipedFalse } from '/data/utils.js'
 
 
 ////////////////CONSTS//////////////////////

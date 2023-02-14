@@ -119,7 +119,6 @@ dogContainer.addEventListener(events[deviceType].move, (event) => {
   //Stop Drawing
   dogContainer.addEventListener(events[deviceType].up, () => {
     dogContainer.style.transform = `translate(0, 0)`
-    console.log(swipedWhere)
     if (swipedWhere === 'Left') {
         wasSwiped('dislike')
     }

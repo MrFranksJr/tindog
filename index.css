@@ -59,7 +59,8 @@ main {
     justify-content: space-between;
     padding: 16px 12px;
     transform: translate(0, 0);
-    transition: 0.4s;
+    transition-property: transform;
+    transition: 0.4s ease-in-out;
     overflow: hidden;
 }
 

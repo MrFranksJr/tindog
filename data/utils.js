@@ -1,5 +1,3 @@
-import dogs from "./data";
-
 export { convertStyle, preLoadAvatars, isTouchDevice, deviceType, events, getXY, mouseX, mouseY, initialX, initialY, isSwiped, modifyXnY, isSwipedTrue, isSwipedFalse }
 
 const convertStyle = () => {

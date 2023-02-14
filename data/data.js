@@ -40,7 +40,7 @@ const dogs = [
     },
     {
         name: "Barud",
-        avatar: ["images/barud.jpg"],
+        avatar: ["images/barud.jpg", "images/barud2.jpg", "images/barud3.jpg"],
         age: 32,
         bio: "Some say I'm a prince...<br>I dunno why",
         hasBeenSwiped: false,

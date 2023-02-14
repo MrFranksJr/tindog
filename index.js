@@ -1,12 +1,13 @@
 ////////////////IMPORTS//////////////////////
 import Dog from '/data/Dog.js'
 import dogs from '/data/data.js'
-import { convertStyle } from '/data/utils.js'
+import { convertStyle, isTouchDevice, isSwiped, deviceType, events, getXY, mouseX, mouseY, initialX, initialY, modifyXnY, isSwipedTrue, isSwipedFalse } from '/data/utils.js'
 
 
 ////////////////CONSTS//////////////////////
 const likeBtn = document.getElementById('like-btn')
 const dislikeBtn = document.getElementById('dislike-btn')
+const dogContainer = document.getElementById('dog-container')
 
 ////////////////STORE AND RANDOMIZE DOGS//////////////////////
 let dogArray = dogs.sort((a, b) => 0.5 - Math.random())
@@ -37,14 +38,14 @@ function wasSwiped(buttonType) {
     }
     else {
         setTimeout(() => { 
-            document.getElementById('dog-container').innerHTML = `<p class="message">There's no more dogs out there for you to swipe through...<br><img src="/images/sad.svg"></p>`
-            document.getElementById('dog-container').style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.9) -11.44%, rgba(0, 0, 0, 0) 39.97%)`}
+            dogContainer.innerHTML = `<p class="message">There's no more dogs out there for you to swipe through...<br><img src="/images/sad.svg"></p>`
+            dogContainer.style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.9) -11.44%, rgba(0, 0, 0, 0) 39.97%)`}
             , 1500)
     }
 }
 
 function renderDogs() {
-    document.getElementById('dog-container').innerHTML = dog.getDogHtml()
+    dogContainer.innerHTML = dog.getDogHtml()
     likeBtn.disabled = false
     dislikeBtn.disabled = false
 }
@@ -77,5 +78,59 @@ window.addEventListener("resize", convertStyle)
 window.addEventListener("DOMContentLoaded", convertStyle)
 
 ///////////INITIAL RENDER///////////////
-document.getElementById('dog-container').style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.9) -11.44%, rgba(0, 0, 0, 0) 39.97%)`
+dogContainer.style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.9) -11.44%, rgba(0, 0, 0, 0) 39.97%)`
 setTimeout(() => renderDogs(), 1500)
+
+
+///////////TOUCH EVENTS//////////////////
+
+//Start Swipe
+let swipedWhere = ''
+dogContainer.addEventListener(events[deviceType].down, (event) => {
+    isSwipedTrue()
+    //Get X and Y Position
+    getXY(event)
+    modifyXnY(mouseX, 'mouseX')
+    modifyXnY(mouseY, 'mouseY')
+  })
+
+  //Mousemove / touchmove
+dogContainer.addEventListener(events[deviceType].move, (event) => {
+    if (!isTouchDevice()) {
+      event.preventDefault()
+    }
+    if (isSwiped) {
+      getXY(event)
+      let diffX = mouseX - initialX;
+      let diffY = mouseY - initialY;
+      if (Math.abs(diffY) > Math.abs(diffX)) {
+        
+      } else {
+        console.log(diffX)
+        swipedWhere = diffX > 0 ? "Right" : "Left"
+        if (swipedWhere === 'Left') {
+            dogContainer.style.transform = `rotate(-10deg) translate(-100px, 10px)`
+        }
+        else if (swipedWhere === 'Right')
+            dogContainer.style.transform = `rotate(10deg) translate(100px, 10px)`
+      }
+    }
+  })
+  //Stop Drawing
+  dogContainer.addEventListener(events[deviceType].up, () => {
+    dogContainer.style.transform = `translate(0, 0)`
+    console.log(swipedWhere)
+    if (swipedWhere === 'Left') {
+        wasSwiped('dislike')
+    }
+    else if (swipedWhere === 'Right') {
+        wasSwiped('like')
+    }
+    isSwipedFalse()
+  })
+  dogContainer.addEventListener("mouseleave", () => {
+    isSwipedFalse()
+  })
+  window.onload = () => {
+    isSwipedFalse()
+  }

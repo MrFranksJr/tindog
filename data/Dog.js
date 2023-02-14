@@ -10,40 +10,25 @@ class Dog {
         preLoadAvatars(this.avatar)
         document.getElementById('dog-container').style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.9) -11.44%, rgba(0, 0, 0, 0) 39.97%), url(/${this.avatar[this.currentIndex]}) center / cover`
 
-        if (this.maxIndex > 1) {
-            let photoDivs = ''
-            for (let i=0; i < this.maxIndex; i++) {
-                if (i === this.currentIndex) {
-                    photoDivs = photoDivs + `<label class="active" id="label-${i}" data-dotid="dot${i+1}"></label>`
-                }
-                else {
-                    photoDivs = photoDivs + `<label id="label-${i}" data-dotid="dot${i+1}"></label>`
-                }
+        let photoDivs = ''
+        for (let i=0; i < this.maxIndex; i++) {
+            if (i === this.currentIndex) {
+                photoDivs = photoDivs + `<label class="active" id="label-${i}" data-dotid="dot${i+1}"></label>`
             }
-            return `
-            <a title="Previous photo" id="previous" href="#" data-photoevent="previous"></a>
-            <a title="Next photo" id="next" href="#" data-photoevent="next"></a>
-            <img class="badge" id="badge">
-            <div id="dog-data">
-                <h2>${this.name}, ${this.age}</h2>
-                <h3>${this.bio}</h3>
-                <div class="dots">${photoDivs}</div>
-            </div>
-            `
+            else {
+                photoDivs = photoDivs + `<label id="label-${i}" data-dotid="dot${i+1}"></label>`
+            }
         }
-        else {
-            return `
-            <img class="badge" id="badge">
-            <div id="dog-data">
-                <h2>${this.name}, ${this.age}</h2>
-                <h3>${this.bio}</h3>
-            </div>
-            `
-        }
-        
+        return `
+        <img class="badge" id="badge">
+        <div id="dog-data">
+            <h2>${this.name}, ${this.age}</h2>
+            <h3>${this.bio}</h3>
+            <div class="dots">${photoDivs}</div>
+        </div>
+        `
     }
     wasSwiped(buttonType) {
-        console.log('into dog.wasswiped')
         this.hasBeenSwiped = true
         if (buttonType === 'like') {
             this.hasBeenLiked = true

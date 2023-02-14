@@ -18,13 +18,12 @@ function getNextDog() {
     return nextDogData ? new Dog(nextDogData) : {}
 }
 
-////////////////swipe event//////////////////////
+////////////////was swiped event//////////////////////
 function wasSwiped(buttonType) {
     likeBtn.disabled = true
     dislikeBtn.disabled = true
 
     if (buttonType === 'like') {
-        console.log('badge set')
         document.getElementById('badge').src = '/images/badge-like.png'
     }
     else if (buttonType === 'dislike') {
@@ -63,17 +62,9 @@ document.addEventListener("click", function(e) {
         wasSwiped(e.target.dataset.buttontype)
         }
     }
-    if (e.target.dataset.photoevent) {
-        if (e.target.dataset.photoevent === 'next') {
-            dog.nextPhoto()
-            renderDogs()
-        }
-        else if (e.target.dataset.photoevent === 'previous') {
-            dog.previousPhoto()
-            renderDogs()
-        }
-    }
 })
+
+
 
 ///////////SAFARI BAR HANDLER - RESIZE EVENT///////////////
 window.addEventListener("resize", convertStyle)
@@ -84,12 +75,14 @@ dogContainer.style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.9) -11.44
 setTimeout(() => renderDogs(), 1500)
 
 
+
+
 ///////////TOUCH EVENTS//////////////////
-let diffX
-let diffY
+let diffX = 0
+let diffY = 0
+let swipedWhere = ''
 
 //Start Swipe
-let swipedWhere = ''
 dogContainer.addEventListener(events[deviceType].down, (event) => {
     isSwipedTrue()
     //Get X and Y Position
@@ -109,7 +102,6 @@ dogContainer.addEventListener(events[deviceType].move, (event) => {
       diffY = mouseY - initialY;
       if (Math.abs(diffY) > Math.abs(diffX)) {} 
       else {
-        console.log(diffX)
         swipedWhere = diffX > 0 ? "Right" : "Left"
         if (swipedWhere === 'Left') {
             dogContainer.style.transform = `rotate(${diffX/10}deg) translate(${diffX*2}px, 0px)`
@@ -121,8 +113,19 @@ dogContainer.addEventListener(events[deviceType].move, (event) => {
     }
   })
   //Stop Drawing
-  dogContainer.addEventListener(events[deviceType].up, () => {
-    if (diffX > 100 || diffX < -100) {
+  dogContainer.addEventListener(events[deviceType].up, (event) => {
+
+    if (diffX === 0) {
+        if (event.clientX > document.body.clientWidth/2) {
+            dog.nextPhoto()
+            renderDogs()
+        }
+        else if (event.clientX < document.body.clientWidth/2) {
+            dog.previousPhoto()
+            renderDogs()
+        }
+    }
+    else if (diffX > 110 || diffX < -110) {
         if (swipedWhere === 'Left') {
             wasSwiped('dislike')
         }
@@ -131,7 +134,7 @@ dogContainer.addEventListener(events[deviceType].move, (event) => {
         }
     }
     dogContainer.style.transform = `translate(0, 0)`
-    resetXnY()
+    diffX = 0
     isSwipedFalse()
     swipedWhere = ''
   })

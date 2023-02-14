@@ -1,4 +1,4 @@
-import { preLoadAvatars } from "./utils"
+import { preLoadAvatars } from "./utils.js"
 
 class Dog {
     constructor(data) {

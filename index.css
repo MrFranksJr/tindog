@@ -10,6 +10,10 @@ body {
     overflow: none;
 }
 
+body:has(.requires-no-scroll) {
+    overflow: hidden;
+  }
+
 .container {
     margin: 0 auto;
     background-color: #FFF;

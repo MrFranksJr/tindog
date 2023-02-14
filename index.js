@@ -90,7 +90,9 @@ dogContainer.addEventListener(events[deviceType].down, (event) => {
     getXY(event)
     modifyXnY(mouseX, 'mouseX')
     modifyXnY(mouseY, 'mouseY')
+    if (isTouchDevice) {
     touchClientX = event.touches[0].clientX
+    }
   })
 
   //Mousemove / touchmove

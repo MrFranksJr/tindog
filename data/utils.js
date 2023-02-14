@@ -1,4 +1,4 @@
-export { convertStyle, preLoadAvatars, isTouchDevice, deviceType, events, getXY, mouseX, mouseY, initialX, initialY, isSwiped, modifyXnY, isSwipedTrue, isSwipedFalse }
+export { convertStyle, preLoadAvatars, isTouchDevice, deviceType, events, getXY, mouseX, mouseY, initialX, initialY, isSwiped, modifyXnY, isSwipedTrue, isSwipedFalse, resetXnY }
 
 const convertStyle = () => {
     const height = window.innerHeight;
@@ -71,6 +71,13 @@ function modifyXnY(value, string) {
     else if (string === 'mouseY') {
         initialY = value
     }
+}
+
+function resetXnY() {
+mouseX,
+  initialX = 0
+mouseY,
+  initialY = 0
 }
 
 //set isSwiped true

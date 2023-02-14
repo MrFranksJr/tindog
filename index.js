@@ -1,7 +1,7 @@
 ////////////////IMPORTS//////////////////////
 import Dog from '/data/Dog.js'
 import dogs from '/data/data.js'
-import { convertStyle, isTouchDevice, isSwiped, deviceType, events, getXY, mouseX, mouseY, initialX, initialY, modifyXnY, isSwipedTrue, isSwipedFalse } from '/data/utils.js'
+import { convertStyle, isTouchDevice, isSwiped, deviceType, events, getXY, mouseX, mouseY, initialX, initialY, modifyXnY, isSwipedTrue, isSwipedFalse, resetXnY } from '/data/utils.js'
 
 
 ////////////////CONSTS//////////////////////
@@ -83,6 +83,8 @@ setTimeout(() => renderDogs(), 1500)
 
 
 ///////////TOUCH EVENTS//////////////////
+let diffX
+let diffY
 
 //Start Swipe
 let swipedWhere = ''
@@ -101,33 +103,34 @@ dogContainer.addEventListener(events[deviceType].move, (event) => {
     }
     if (isSwiped) {
       getXY(event)
-      let diffX = mouseX - initialX;
-      let diffY = mouseY - initialY;
-      if (Math.abs(diffY) > Math.abs(diffX)) {
-        
-      } else {
-        console.log(diffX)
-        
+      diffX = mouseX - initialX;
+      diffY = mouseY - initialY;
+      if (Math.abs(diffY) > Math.abs(diffX)) {} 
+      else {
         swipedWhere = diffX > 0 ? "Right" : "Left"
         if (swipedWhere === 'Left') {
-            dogContainer.style.transform = `rotate(-10deg) translate(${diffX*2}px, 10px)`
+            dogContainer.style.transform = `rotate(-10deg) translate(${diffX}px, 10px)`
         }
         else if (swipedWhere === 'Right') {
-            dogContainer.style.transform = `rotate(10deg) translate(${diffX*2}px, 10px)`
+            dogContainer.style.transform = `rotate(10deg) translate(${diffX}px, 10px)`
         }
       }
     }
   })
   //Stop Drawing
   dogContainer.addEventListener(events[deviceType].up, () => {
+    if (diffX > 100 || diffX < -100) {
+        if (swipedWhere === 'Left') {
+            wasSwiped('dislike')
+        }
+        else if (swipedWhere === 'Right') {
+            wasSwiped('like')
+        }
+    }
     dogContainer.style.transform = `translate(0, 0)`
-    if (swipedWhere === 'Left') {
-        wasSwiped('dislike')
-    }
-    else if (swipedWhere === 'Right') {
-        wasSwiped('like')
-    }
+    resetXnY()
     isSwipedFalse()
+    swipedWhere = ''
   })
   dogContainer.addEventListener("mouseleave", () => {
     isSwipedFalse()

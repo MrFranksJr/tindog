@@ -24,6 +24,7 @@ function wasSwiped(buttonType) {
     dislikeBtn.disabled = true
 
     if (buttonType === 'like') {
+        console.log('badge set')
         document.getElementById('badge').src = '/images/badge-like.png'
     }
     else if (buttonType === 'dislike') {
@@ -33,8 +34,9 @@ function wasSwiped(buttonType) {
     dog.wasSwiped(buttonType)
 
     if (dogArray.length > 0) {
-        dog = getNextDog()
-        setTimeout(() => renderDogs(), 1500)
+        setTimeout(() => {
+            dog = getNextDog()
+            renderDogs()}, 1500)
     }
     else {
         setTimeout(() => { 
@@ -107,12 +109,13 @@ dogContainer.addEventListener(events[deviceType].move, (event) => {
       diffY = mouseY - initialY;
       if (Math.abs(diffY) > Math.abs(diffX)) {} 
       else {
+        console.log(diffX)
         swipedWhere = diffX > 0 ? "Right" : "Left"
         if (swipedWhere === 'Left') {
-            dogContainer.style.transform = `rotate(-10deg) translate(${diffX}px, 10px)`
+            dogContainer.style.transform = `rotate(${diffX/10}deg) translate(${diffX*2}px, 0px)`
         }
         else if (swipedWhere === 'Right') {
-            dogContainer.style.transform = `rotate(10deg) translate(${diffX}px, 10px)`
+            dogContainer.style.transform = `rotate(${diffX/10}deg) translate(${diffX*2}px, 0px)`
         }
       }
     }

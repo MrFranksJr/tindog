@@ -43,6 +43,7 @@ class Dog {
         
     }
     wasSwiped(buttonType) {
+        console.log('into dog.wasswiped')
         this.hasBeenSwiped = true
         if (buttonType === 'like') {
             this.hasBeenLiked = true

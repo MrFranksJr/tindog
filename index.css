@@ -95,6 +95,7 @@ main {
     width: 200px;
     transform-origin: 200px;
     transform: rotate(-30deg);
+    z-index: 10;
 }
 
 #previous,

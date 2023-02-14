@@ -77,7 +77,7 @@ setTimeout(() => renderDogs(), 1500)
 
 
 
-///////////TOUCH EVENTS//////////////////
+///////////////////////////////////////////TOUCH EVENTS//////////////////
 let diffX = 0
 let diffY = 0
 let swipedWhere = ''
@@ -90,7 +90,7 @@ dogContainer.addEventListener(events[deviceType].down, (event) => {
     getXY(event)
     modifyXnY(mouseX, 'mouseX')
     modifyXnY(mouseY, 'mouseY')
-    if (isTouchDevice) {
+    if (deviceType === 'touch') {
     touchClientX = event.touches[0].clientX
     }
   })
@@ -118,7 +118,6 @@ dogContainer.addEventListener(events[deviceType].move, (event) => {
   })
   //Stop Drawing
   dogContainer.addEventListener(events[deviceType].up, (event) => {
-    console.log(event)
     if (diffX === 0) {
         if (event.clientX > document.body.clientWidth/2 || touchClientX > document.body.clientWidth/2) {
             dog.nextPhoto()

@@ -116,11 +116,11 @@ dogContainer.addEventListener(events[deviceType].move, (event) => {
   dogContainer.addEventListener(events[deviceType].up, (event) => {
     console.log(event)
     if (diffX === 0) {
-        if (event.clientX > document.body.clientWidth/2 || event.touches[0].pageX > document.body.clientWidth/2) {
+        if (event.clientX > document.body.clientWidth/2 || event.touches[0].clientX > document.body.clientWidth/2) {
             dog.nextPhoto()
             renderDogs()
         }
-        else if (event.clientX < document.body.clientWidth/2 || event.touches[0].pageX < document.body.clientWidth/2) {
+        else if (event.clientX < document.body.clientWidth/2 || event.touches[0].clientX < document.body.clientWidth/2) {
             dog.previousPhoto()
             renderDogs()
         }

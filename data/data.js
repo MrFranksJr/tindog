@@ -32,7 +32,7 @@ const dogs = [
     },
     {
         name: "Saartje",
-        avatar: ["images/saartje.jpeg"],
+        avatar: ["images/saartje.jpeg", "images/saartje2.jpeg"],
         age: 112,
         bio: "They call me Queen S 👑",
         hasBeenSwiped: false,
@@ -56,7 +56,7 @@ const dogs = [
     },
     {
         name: "Thelma",
-        avatar: ["images/thelma.jpeg"],
+        avatar: ["images/thelma.jpeg", "images/thelma2.jpg", "images/thelma3.jpg", "images/thelma4.jpg", "images/thelma5.jpg"],
         age: 54,
         bio: "Can you handle me?",
         hasBeenSwiped: false,
@@ -72,7 +72,7 @@ const dogs = [
     },
     {
         name: "Argo",
-        avatar: ["images/argo.jpeg"],
+        avatar: ["images/argo.jpeg", "images/argo2.jpeg", "images/argo3.jpeg", "images/argo4.jpeg"],
         age: 21,
         bio: "What's up ladies...",
         hasBeenSwiped: false,

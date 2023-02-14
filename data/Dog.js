@@ -1,20 +1,20 @@
-import dogs from '/data/data.js'
-
 class Dog {
     constructor(data) {
         Object.assign(this, data)
+        this.maxIndex = this.avatar.length
+        this.currentIndex = 0
     }
     getDogHtml() {
-        document.getElementById('dog-container').style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.9) -11.44%, rgba(0, 0, 0, 0) 39.97%), url(/${this.avatar[0]}) center / cover`
+        document.getElementById('dog-container').style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.9) -11.44%, rgba(0, 0, 0, 0) 39.97%), url(/${this.avatar[this.currentIndex]}) center / cover`
 
-        if (this.avatar.length > 1) {
+        if (this.maxIndex > 1) {
             let photoDivs = ''
-            for (let i=0; i < this.avatar.length; i++) {
-                if (i === 0) {
-                    photoDivs = photoDivs + `<label class="active" for="image-${i}" id="label-${i}"></label>`
+            for (let i=0; i < this.maxIndex; i++) {
+                if (i === this.currentIndex) {
+                    photoDivs = photoDivs + `<label class="active" id="label-${i}" data-dotid="dot${i+1}"></label>`
                 }
                 else {
-                    photoDivs = photoDivs + `<label for="image-${i}" id="label-${i}"></label>`
+                    photoDivs = photoDivs + `<label id="label-${i}" data-dotid="dot${i+1}"></label>`
                 }
             }
             return `
@@ -43,6 +43,16 @@ class Dog {
         this.hasBeenSwiped = true
         if (buttonType === 'like') {
             this.hasBeenLiked = true
+        }
+    }
+    nextPhoto() {
+        if (this.currentIndex < this.maxIndex - 1) {
+            this.currentIndex ++
+        }
+    }
+    previousPhoto() {
+        if (this.currentIndex > 0) {
+            this.currentIndex --
         }
     }
 }

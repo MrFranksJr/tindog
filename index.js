@@ -1,7 +1,8 @@
 ////////////////IMPORTS//////////////////////
 import Dog from '/data/Dog.js'
 import dogs from '/data/data.js'
-import convertStyle from '/data/utils.js'
+import { convertStyle } from '/data/utils.js'
+
 
 ////////////////CONSTS//////////////////////
 const likeBtn = document.getElementById('like-btn')
@@ -60,7 +61,14 @@ document.addEventListener("click", function(e) {
         }
     }
     if (e.target.dataset.photoevent) {
-        console.log('it works!' + e.target.dataset.photoevent)
+        if (e.target.dataset.photoevent === 'next') {
+            dog.nextPhoto()
+            renderDogs()
+        }
+        else if (e.target.dataset.photoevent === 'previous') {
+            dog.previousPhoto()
+            renderDogs()
+        }
     }
 })
 

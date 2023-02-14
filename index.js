@@ -107,12 +107,14 @@ dogContainer.addEventListener(events[deviceType].move, (event) => {
         
       } else {
         console.log(diffX)
+        
         swipedWhere = diffX > 0 ? "Right" : "Left"
         if (swipedWhere === 'Left') {
-            dogContainer.style.transform = `rotate(-10deg) translate(-100px, 10px)`
+            dogContainer.style.transform = `rotate(-10deg) translate(${diffX*2}px, 10px)`
         }
-        else if (swipedWhere === 'Right')
-            dogContainer.style.transform = `rotate(10deg) translate(100px, 10px)`
+        else if (swipedWhere === 'Right') {
+            dogContainer.style.transform = `rotate(10deg) translate(${diffX*2}px, 10px)`
+        }
       }
     }
   })

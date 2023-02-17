@@ -8,9 +8,9 @@ const convertStyle = () => {
 }
 
 function preLoadAvatars(avatarArray) {
-    let imageArray = new Array()
     for (let i=0; i < avatarArray.length; i++) {
-        imageArray[i]
+        const img = new Image()
+        img.src=avatarArray[i]
     }
 }
 
@@ -87,3 +87,11 @@ const isSwipedTrue = () => isSwiped = true
 const isSwipedFalse = () => isSwiped = false
 
 //////////////////////////TOUCH EVENTS END//////////////////////////////
+
+
+////PRELOAD images////
+function preloadImage(url)
+{
+    var img=new Image();
+    img.src=url;
+}

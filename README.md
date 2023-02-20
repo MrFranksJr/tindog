@@ -1,6 +1,6 @@
 *Feb 14, 2022 - Franky Jr Blondeel*
 <p align="center">
-<img alt="banner image" src="https://github.com/MrFranksJr/MrFranksJr/main/assets/tindog/Banner.png">
+<img alt="banner image" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/Banner.png">
 </p>
 
 # Tindog – a Tinder clone

@@ -1,21 +1,19 @@
-# co0e64371a0120af20b5f91e9
+*Feb 14, 2022 - Franky Jr Blondeel*
+<p align="center">
+<img alt="banner image" src="https://github.com/MrFranksJr/MrFranksJr/blob/main/assets/tindog/banner.png">
+</p>
 
-Quick start:
+# Tindog – a Tinder clone
 
-```
-$ npm install
-$ npm start
-````
+## Overview
 
-Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
+**Live version [here](https://tindogzzz.netlify.app/)**
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+This is a small dice-rolling game, teaching different more advanced Javascript concepts.
+This particular repo uses constructor functions in JS, instead of classes.
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+For a full report and explanation, please visit the [card-rpgClasses](https://github.com/MrFranksJr/card-rpgClasses) repository
 
-Happy Coding!
+<p align="center">
+<img alt="screenshot of the game" src="https://github.com/MrFranksJr/MrFranksJr/blob/main/assets/card-rpg/result.png">
+</p>

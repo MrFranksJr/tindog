@@ -1,4 +1,4 @@
-*Feb 14, 2022 - Franky Jr Blondeel*
+*Feb 14, 2022 - Franky Jr Blondeel (my birthday!)*
 <p align="center">
 <img alt="banner image" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/Banner.png">
 </p>
@@ -112,6 +112,29 @@ One thing that would really take the app to the next level would be to implement
 So ended up stumbling on this site: https://codingartistweb.com/2022/09/how-to-detect-swipe-direction-with-javascript/
 The site had a really nice tutorial on how to detect where a user swiped to.
 I started out copy and pasting parts of the code, which I knew I could use, and dropped other parts that I did not need (e.g. the up/down detection)
+
+Just looking at this piece of code, I learnt so much! From the actual detection of which device is used, to extracting where a user clicks. MouseEvents vs TouchEvents and ClientX and ClientY to determine the positions of clicks or touches.
+
+After a while, and with some tweaking, I got the swipemotion done!
+<p align="center">
+<img alt="photo scrolling" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/swiping.webp">
+</p>
+
+The code was surprisingly easy to transfer to my project. I tried to really do it mindful and only keep the parts I actually need (which you can only determine if fully understand the thing).
+
+One thing that helped me understand the code better was to transfer it out to the different JS modules I had already. That way I really had to deconstruct the whole thing and understand what hooked into where.
+
+#### Trouble
+Now I did run into one big issue, which was the left and right photo tapping I had implemented earlier, to allow users to navigate in between photos of the dogs.
+When you swiped, the app seemed to think you're also clicking on either the left or right side of the image (depending on where your finger or mouse was)
+This was problematic, because upon 'releasing' the swipe, the app would load in the next image, which also triggered a new HTML render, which then overwrote the 'Like' or 'Dislike' badges on top of the photos... Also, I just didn't want to load in the next picture.
+
+Luckily, this bug had a really elegant fix, because with the updated swipe feature, I was already tracking where the finger or mouse was! So in fact, I could potentially get rid of the nasty \<a> elements, which were a dirty implementation in the first place, imo. I just had to tell the system two things now:
+* was this an actual swipe: meaning, build in a minimum amount of swiping distance, before it's counted as a swipe
+* if it's not a swipe, it's a click
+* if it's a click, where did they click? was it over 50% of the total screen pixel value on the X-axis? or not?
+
+Since 90% of the touch code was already in place, it was really easy to add in this extra bit of functionality. And it cleaned the whole thing up by a lot too.
 
 ### More dogs!!
 

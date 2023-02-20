@@ -7,7 +7,6 @@ class Dog {
         this.currentIndex = 0
     }
     getDogHtml() {
-        preLoadAvatars(this.avatar)
         document.getElementById('dog-container').style.background = `linear-gradient(0deg, rgba(0, 0, 0, 0.9) -11.44%, rgba(0, 0, 0, 0) 39.97%), url(/${this.avatar[this.currentIndex]}) center / cover`
 
         let photoDivs = ''
@@ -19,6 +18,7 @@ class Dog {
                 photoDivs = photoDivs + `<label id="label-${i}" data-dotid="dot${i+1}"></label>`
             }
         }
+        preLoadAvatars(this.avatar)
         return `
         <img class="badge" id="badge">
         <div id="dog-data">

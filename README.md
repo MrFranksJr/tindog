@@ -137,10 +137,40 @@ Luckily, this bug had a really elegant fix, because with the updated swipe featu
 Since 90% of the touch code was already in place, it was really easy to add in this extra bit of functionality. And it cleaned the whole thing up by a lot too.
 
 ### More dogs!!
+The app was nearing it's completion ;) Time to add more dogs, and I sent my work around to a couple of people. I luckily have a lot of friends who are crazy about dogs, so it wasn't hard to find some extra ones to put into the app.
+There's even a rogue cat in there! They didn't get the message I think...
 
 ### Optimizations
+So, now the app was running quite nicely locally. But when testing online on the deployed netlify version, I noticed some of the pictures loaded slowly, when clicking next and previous.
+Unacceptable by today's standards, so it had to change.
+
+Changing the size of the images would not change too much, since they weren't too big to begin with. But what if the pictures were already in memory before the user actually clicked next?
+
+So I went on the hunt to make that happen, added this piece of code into the HTML building part:
+```
+function preLoadAvatars(avatarArray) {
+    for (let i=0; i < avatarArray.length; i++) {
+        const img = new Image()
+        img.src=avatarArray[i]
+    }
+}
+```
+And it changed the entire experience of the app, even though, the initial loading now probably became a tiny bit slower. This feels a lot better tbh, so I kept it in.
 
 ## Future improvements?
+I now stopped development of this particular assignment, I think I have taken it far enough for now, even though, there's tonnes of extra stuff I could do.
+* allowing people to create their own profile
+* creating a second instance of 'dog' when starting the app. That way, if you swipe, you already catch a glimps of the next dog behind it. It would make the whole swiping experience a lot nicer.
+* allowing people to upload there own dog: people just kept asking me to add their dog onto the app, so I wanted to allow them to do it themselves :)
 
+But hey, you can always keep going on a particular project. I'm freezing it for now, in favor of progressing with the course and gain some extra knowledge.
+
+It would be really nice to have an actual database behind it in the future. We'll see
 
 ## Conclusion
+Tindog was an absolutely awesome assignment and really pushed me further than ever to make the app more fun to use. My creativity got sparked with this one, and I really hope I can maybe make it more advanced in the future.
+
+On to the next! Happy coding!
+<p align="center">
+<img alt="photo scrolling" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/tindog.jpeg">
+</p>

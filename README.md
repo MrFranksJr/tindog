@@ -76,7 +76,7 @@ If multiple are available, that meant there are multiple pictures.
 
 Next up, I needed to make the left and right sides of the pictures clickable, in order to load in the next or the previous pictures.
 
-I first did this by setting up big <a> elements that covered the entire left and right side of the pictures. Something I had to refactor later entirely (due to the swipe feature I had to introduce)
+I first did this by setting up big \<a> elements that covered the entire left and right side of the pictures. Something I had to refactor later entirely (due to the swipe feature I had to introduce)
 
 It was a bit of a search, but in the end, I could easily navigate through pictures, and it really brought the app to life!
 <p align="center">
@@ -96,9 +96,28 @@ It really made the whole thing look a lot nicer when sharing to other people ove
 
 
 ### Desktop Version
+Up next, another challenge.
+Now that the basics of the app were really starting to get fleshed out, I focused a bit on the desktop version.
+Following the original Figma design, the app only took into account that it would be viewed on a narrow screen.
+So what I did is added a couple of media queries, which rearranged the entire thing to look a lot nicer on bigger screens, with a max width of 1200px.
+Check out the result below:
+<p align="center">
+<img alt="photo scrolling" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/desktop.png">
+</p>
+
 
 ### Actual Swiping
+One thing that would really take the app to the next level would be to implement actual swiping. So I had to go on a google hunt to make that happen, as I wasn't totally sure if it was even possible.
+
+So ended up stumbling on this site: https://codingartistweb.com/2022/09/how-to-detect-swipe-direction-with-javascript/
+The site had a really nice tutorial on how to detect where a user swiped to.
+I started out copy and pasting parts of the code, which I knew I could use, and dropped other parts that I did not need (e.g. the up/down detection)
 
 ### More dogs!!
+
+### Optimizations
+
+## Future improvements?
+
 
 ## Conclusion

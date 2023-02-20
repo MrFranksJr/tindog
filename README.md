@@ -14,7 +14,7 @@ The goal was to build a simple tinder clone, using Javascript classes, as a perf
 
 Below are the requirements:
 <p align="center">
-<img alt="banner image" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/requirements.png">
+<img alt="requirements" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/requirements.png">
 </p>
 
 We also got provided a Figma design, and part of the goal was to follow that design.
@@ -65,8 +65,20 @@ body:has(.requires-no-scroll) {
   }
 ```
 Which seemed to do the job perfectly.
+<p align="center">
+<img alt="demo of the resizing" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/toolbar.webp">
+</p>
 
 ### Multiple Photos
+One thing I really wanted to make part of the app is the fact that a dog could have multiple photos on their profile, just like the real Tinder (I think??)
+The idea is t
+
 ### Some Design changes
+
 ### Actual Swiping
+
 ### Desktop Version
+
+### More dogs!!
+
+## onclusion

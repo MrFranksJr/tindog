@@ -115,7 +115,7 @@ I started out copy and pasting parts of the code, which I knew I could use, and 
 
 Just looking at this piece of code, I learnt so much! From the actual detection of which device is used, to extracting where a user clicks. MouseEvents vs TouchEvents and ClientX and ClientY to determine the positions of clicks or touches.
 
-After a while, and with some tweaking, I got the swipemotion done!
+After a while, and with some tweaking, I got the swipe-motion done!
 <p align="center">
 <img alt="photo scrolling" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/swiping.webp">
 </p>
@@ -160,7 +160,7 @@ And it changed the entire experience of the app, even though, the initial loadin
 ## Future improvements?
 I now stopped development of this particular assignment, I think I have taken it far enough for now, even though, there's tonnes of extra stuff I could do.
 * allowing people to create their own profile
-* creating a second instance of 'dog' when starting the app. That way, if you swipe, you already catch a glimps of the next dog behind it. It would make the whole swiping experience a lot nicer.
+* creating a second instance of 'dog' when starting the app. That way, if you swipe, you already catch a glimpse of the next dog behind it. It would make the whole swiping experience a lot nicer.
 * allowing people to upload there own dog: people just kept asking me to add their dog onto the app, so I wanted to allow them to do it themselves :)
 
 But hey, you can always keep going on a particular project. I'm freezing it for now, in favor of progressing with the course and gain some extra knowledge.

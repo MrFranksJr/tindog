@@ -102,7 +102,7 @@ Following the original Figma design, the app only took into account that it woul
 So what I did is added a couple of media queries, which rearranged the entire thing to look a lot nicer on bigger screens, with a max width of 1200px.
 Check out the result below:
 <p align="center">
-<img alt="photo scrolling" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/desktop.png">
+<img alt="desktop version" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/desktop.png">
 </p>
 
 

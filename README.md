@@ -71,14 +71,34 @@ Which seemed to do the job perfectly.
 
 ### Multiple Photos
 One thing I really wanted to make part of the app is the fact that a dog could have multiple photos on their profile, just like the real Tinder (I think??)
-The idea is t
+The idea is to have some navigation dots appear on the bottom of the photo, if there are multiple photos available. That meant changing the data structure a bit of the data.js file, which contains all the dogs in the system, to hold an array of relative URLs.
+If multiple are available, that meant there are multiple pictures.
+
+Next up, I needed to make the left and right sides of the pictures clickable, in order to load in the next or the previous pictures.
+
+I first did this by setting up big <a> elements that covered the entire left and right side of the pictures. Something I had to refactor later entirely (due to the swipe feature I had to introduce)
+
+It was a bit of a search, but in the end, I could easily navigate through pictures, and it really brought the app to life!
+<p align="center">
+<img alt="photo scrolling" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/photos.webp">
+</p>
 
 ### Some Design changes
+Next up, I spent some attention on the details, adding some icons to the site (like favicons, apple touch logos, etc).
 
-### Actual Swiping
+It really made the whole thing look a lot nicer when sharing to other people over Whatsapp and such!
+<p align="center">
+<img alt="photo scrolling" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/apple-touch.jpeg">
+</p>
+<p align="center">
+<img alt="photo scrolling" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/whatsapp.png">
+</p>
+
 
 ### Desktop Version
 
+### Actual Swiping
+
 ### More dogs!!
 
-## onclusion
+## Conclusion

@@ -117,7 +117,7 @@ Just looking at this piece of code, I learnt so much! From the actual detection 
 
 After a while, and with some tweaking, I got the swipe-motion done!
 <p align="center">
-<img alt="photo scrolling" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/swiping.webp">
+<img alt="animation of swiping dog cards" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/swiping.webp">
 </p>
 
 The code was surprisingly easy to transfer to my project. I tried to really do it mindful and only keep the parts I actually need (which you can only determine if fully understand the thing).
@@ -172,5 +172,5 @@ Tindog was an absolutely awesome assignment and really pushed me further than ev
 
 On to the next! Happy coding!
 <p align="center">
-<img alt="photo scrolling" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/tindog.jpeg">
+<img alt="Screenshot of the app" src="https://raw.githubusercontent.com/MrFranksJr/MrFranksJr/main/assets/tindog/tindog.jpeg">
 </p>
